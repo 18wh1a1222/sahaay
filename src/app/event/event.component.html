@@ -1,0 +1,26 @@
+<div style="padding-left: 80%;">
+    <button type="button" class="btn btn-primary" (click)="needForm()">Post Your Need</button><br>
+</div>
+
+<div class="card mb-3" style="width: 60%; left: 20%;" *ngFor='let event of events'>
+    <h3 class="card-header">EventId #{{event.eventId}}</h3>
+    <div class="card-body">
+      <h5 class="card-title">event {{event.eventName}}</h5>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{event.info}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">OpenTime: {{event.openTime}}</li>
+        <li class="list-group-item">CloseTime: {{event.closeTime}}</li>
+      </ul>
+ <!--   <div class="card-body" style="padding-left: 65%;">
+      <a href="#" class="card-link">chat link</a>
+      <a href="#" class="card-link">Get Location</a>
+      <a href="#" class="card-link">Contact Info</a>
+    </div>-->
+    <div class="card-footer text-muted">
+      Posted {{event.doe | duration}}
+    </div>
+  </div>
+  

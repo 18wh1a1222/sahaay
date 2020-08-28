@@ -1,0 +1,22 @@
+
+
+<div class="card mb-3" style="width: 60%; left: 20%;" *ngFor='let need of needs'>
+    <h3 class="card-header">NeedId #{{need.needId}}</h3>
+    <div class="card-body">
+      <h5 class="card-title">Need {{need.type}}</h5>
+      
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{need.info}}</p>
+    </div>
+    
+    <div class="card-body" style="padding-left: 65%;">
+      <a href="#" class="card-link">chat link</a>
+      <a href="#" class="card-link">Get Location</a>
+      <a href="#" class="card-link">Contact Info</a>
+    </div>
+    <div class="card-footer text-muted">
+      Posted {{need.don | duration}} days ago
+    </div>
+  </div>
+  

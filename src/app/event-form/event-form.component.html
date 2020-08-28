@@ -1,0 +1,24 @@
+<div style="padding-left: 30%; width: 60%;">
+    <form #postEventsForm="ngForm" (ngSubmit)=postEvents(postEventsForm.value) novalidate>
+  
+            <legend>Post Your Event</legend>
+            <div class="form-group">
+                <input type="text" name="eventName" [(ngModel)]= "event.eventName" >
+            </div>
+            <div class="form-group">
+                <input type="date" name="doe" [(ngModel)]= "event.doe" >
+            </div>
+            <div class="form-group">
+            Select OpenTime<input type="time" name="openTime" [(ngModel)]= "event.openTime" >
+            </div>
+            <div class="form-group">
+                Select CloseTime<input type="time" name="closeTime" [(ngModel)]= "event.closeTime" >
+                </div>
+            <div class="form-group">
+                <label for="exampleTextarea">Describe Your Event</label>
+                <textarea class="form-control" name="info" [(ngModel)] = "event.info" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+ 
+    </form>
+</div>

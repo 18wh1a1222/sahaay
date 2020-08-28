@@ -1,0 +1,76 @@
+<html>
+
+
+<body>
+
+    <div class="container register">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                            aria-controls="home" aria-selected="true">Login For Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                            aria-controls="profile" aria-selected="false">Login For Volunteer</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel"
+                        aria-labelledby="home-tab">
+                        <form #customerLoginForm="ngForm" (ngSubmit)="customerLogin(customerLoginForm.value)"
+                            novalidate>
+                            <h3 class="register-heading">Login For Customer</h3>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Your Login Id *"
+                                            name="loginId" ngModel #loginId="ngModel" required="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Your Password *"
+                                            name="password" ngModel #password="ngModel" required="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" name="LGform1" class="btnContactSubmit" value="Login" />
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade show text-align form-new" id="profile" role="tabpanel"
+                        aria-labelledby="profile-tab">
+                        <form #volunteerloginForm="ngForm" (ngSubmit)="volunteerLogin(volunteerloginForm.value)" novalidate>
+                            <h3 class="register-heading">Login For Volunteer</h3>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+
+                                    <div class="form-group">
+                                        <input type="text" name="loginId" class="form-control"
+                                            placeholder="Your loginId *" required="" ngModel #loginId="ngModel" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" class="form-control"
+                                            placeholder="Your Password *" required="" ngModel #password="ngModel" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" name="LGform2" class="btnContactSubmit" value="Login" />
+                                    </div>
+                                    
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

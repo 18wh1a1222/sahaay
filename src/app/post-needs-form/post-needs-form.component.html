@@ -1,0 +1,41 @@
+<html>
+
+    <head><script>
+        function showTextBox() {
+            alert("in funtion");
+            if ($('#typeOfNeed').val() == '3') {
+                $('#moneyText').css({ 'visibility': 'visible' });
+            }
+        }
+    </script></head>
+
+<body>
+    <div style="padding-left: 30%; width: 60%;">
+        <form #postNeedsForm="ngForm" (ngSubmit)=postNeeds(postNeedsForm.value) novalidate>
+      
+                <legend>Post Your Needs</legend>
+                <div class="form-group">
+                    <label for="exampleSelect1">Type of Needs</label>
+                    <select class="form-control" id="typeOfNeed" onchange="showTextBox()" name="type" [(ngModel)] = "need.type">
+                        <option value="groceries">Groceries</option>
+                        <option value="sanitary">Sanitary</option>
+                        <option value="financial">Financial help</option>
+                        <option value="clothes">Clothes</option>
+                        <option value="medicines">Medicines</option>
+                    </select>
+                </div>
+                <div id="moneyText" style="visibility: hidden">
+                    Amount you need <input type="text" name="money"  [(ngModel)] = "need.money" >
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea">Describe Your Need</label>
+                    <textarea class="form-control" name="info" [(ngModel)] = "need.info" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+     
+        </form>
+    </div>
+    
+</body>
+
+</html>
