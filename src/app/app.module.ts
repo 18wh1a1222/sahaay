@@ -18,6 +18,7 @@ import { UpdateCustomerComponent } from './update-customer/update-customer.compo
 import { UpdateVolunteerComponent } from './update-volunteer/update-volunteer.component';
 import { MyNeedsComponent } from './my-needs/my-needs.component';
 import { NeedFilterPipe } from './need-filter.pipe';
+import { MyEventsComponent } from './my-events/my-events.component';
 
 const appRoot: Routes = [ {path: '', component: LoginComponent},
                           {path: 'login', component: LoginComponent},
@@ -25,6 +26,7 @@ const appRoot: Routes = [ {path: '', component: LoginComponent},
                           {path: 'needs', component: NeedsComponent},
                           {path: 'needsForm', component: PostNeedsFormComponent},
                           {path: 'myNeeds', component: MyNeedsComponent},
+                          {path: 'myEvents', component: MyEventsComponent},
                           {path: 'events', component: EventComponent},
                           {path: 'eventsForm', component: EventFormComponent},
                           {path: 'logout', component: LogoutComponent},
@@ -46,7 +48,8 @@ const appRoot: Routes = [ {path: '', component: LoginComponent},
     UpdateCustomerComponent,
     UpdateVolunteerComponent,
     MyNeedsComponent,
-    NeedFilterPipe
+    NeedFilterPipe,
+    MyEventsComponent
   ],
   imports: [
     BrowserModule,

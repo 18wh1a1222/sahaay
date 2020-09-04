@@ -10,6 +10,8 @@ import { RouteReuseStrategy, Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   customer : any;
   volunteer: any;
+  LoginIdUsers: number;
+  noOfUsers: number;
 
   constructor(private service: SahaayService, private router: Router) {
     this.customer = {customerId:'',age:'',covidAssess:'', customerName:'', gender:'', govId:'', latitude:'', longitude:'', loginId: '', password:'', phone:''};
@@ -60,6 +62,19 @@ export class RegisterComponent implements OnInit {
       alert("Password not Same");
       this.router.navigate(['register']);
     }
+  }
+
+  validCustLoginId(loginId) {
+    console.log(loginId);
+    this.service.validateCustLoginId(loginId).subscribe((result: number) => {this.LoginIdUsers=result});
+  }
+
+  validVolLoginId(loginId) {
+    this.service.validateVolLoginId(loginId).subscribe((result: number) => {this.LoginIdUsers=result});
+  }
+
+  validGovId(govId) {
+    this.service.validGovId(govId).subscribe((result: number) => {this.noOfUsers=result});
   }
 
 }

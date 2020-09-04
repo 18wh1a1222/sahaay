@@ -12,8 +12,13 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="register">Register</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="user; else showNeeds" >
           <a class="nav-link" routerLink="myNeeds">My Needs</a>
+        </li>
+        <li class="nav-item">
+          <ng-template #showNeeds>
+            <a class="nav-link" routerLink="myEvents">My Events</a>
+          </ng-template>
         </li>
         <li class="nav-item" *ngIf="user; else showThis">
           <a class="nav-link" routerLink="updateCustomer" >UpdateProfile</a>

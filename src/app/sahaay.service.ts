@@ -27,6 +27,18 @@ export class SahaayService {
     return this.httpClient.post('sahaay-api/webapi/myresource/regCustomer' , customer);
    }
 
+   validateCustLoginId(loginId: any)  {
+     return this.httpClient.get('sahaay-api/webapi/myresource/validateCustLoginId/' + loginId);
+   }
+
+   validateVolLoginId(loginId: any)  {
+    return this.httpClient.get('sahaay-api/webapi/myresource/validateVolLoginId/' + loginId);
+  }
+
+  validGovId(govId: any)  {
+    return this.httpClient.get('sahaay-api/webapi/myresource/validGovId/' + govId);
+  }
+
    registerVolunteer(volunteer: any)   {
     return this.httpClient.post('sahaay-api/webapi/myresource/regVolunteer' , volunteer);
    }
@@ -53,6 +65,10 @@ export class SahaayService {
 
    getMyNeeds(customerId: any) {
     return this.httpClient.get('sahaay-api/webapi/myresource/getMyNeeds/'+ customerId);
+  }
+
+  getMyEvents(volunteerId: any) {
+    return this.httpClient.get('sahaay-api/webapi/myresource/getMyEvents/'+ volunteerId);
   }
 
    getAllEvents() {
