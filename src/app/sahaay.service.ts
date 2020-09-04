@@ -24,51 +24,51 @@ export class SahaayService {
    }
 
   registerCustomer(customer: any)   {
-    return this.httpClient.post('Sahaay/webapi/myresource/regCustomer' , customer);
+    return this.httpClient.post('sahaay-api/webapi/myresource/regCustomer' , customer);
    }
 
    registerVolunteer(volunteer: any)   {
-    return this.httpClient.post('Sahaay/webapi/myresource/regVolunteer' , volunteer);
+    return this.httpClient.post('sahaay-api/webapi/myresource/regVolunteer' , volunteer);
    }
 
    loginCustomer(loginId: any, password: any)  {
-    return this.httpClient.get('Sahaay/webapi/myresource/loginCustomer/' + loginId +'/'+ password).toPromise();
+    return this.httpClient.get('sahaay-api/webapi/myresource/loginCustomer/' + loginId +'/'+ password).toPromise();
    }
 
    loginVolunteer(loginId: any, password: any)  {
-    return this.httpClient.get('Sahaay/webapi/myresource/loginVolunteer/' + loginId +'/'+ password).toPromise();
+    return this.httpClient.get('sahaay-api/webapi/myresource/loginVolunteer/' + loginId +'/'+ password).toPromise();
    }
 
    postNeeds(need: any)  {
-     return this.httpClient.post('Sahaay/webapi/myresource/regNeed', need);
+     return this.httpClient.post('sahaay-api/webapi/myresource/regNeed', need);
    }
 
    postEvent(event: any)  {
-    return this.httpClient.post('Sahaay/webapi/myresource/regEvent', event);
+    return this.httpClient.post('sahaay-api/webapi/myresource/regEvent', event);
   }
 
    getAllNeeds() {
-     return this.httpClient.get('Sahaay/webapi/myresource/getAllNeeds');
+     return this.httpClient.get('sahaay-api/webapi/myresource/getAllNeeds');
    }
 
-   getMyNeeds(customer: any) {
-    return this.httpClient.get('Sahaay/webapi/myresource/getMyNeeds/', customer);
+   getMyNeeds(customerId: any) {
+    return this.httpClient.get('sahaay-api/webapi/myresource/getMyNeeds/'+ customerId);
   }
 
    getAllEvents() {
-    return this.httpClient.get('Sahaay/webapi/myresource/getAllEvents');
+    return this.httpClient.get('sahaay-api/webapi/myresource/getAllEvents');
   }
 
   getCustomer(customerId: any) {
-    return this.httpClient.get('Sahaay/webapi/myresource/getCustomer/' + customerId);
+    return this.httpClient.get('sahaay-api/webapi/myresource/getCustomer/' + customerId);
   }
 
   getVolunteer(volunteerId: any) {
-    return this.httpClient.get('Sahaay/webapi/myresource/getVolunteer/' + volunteerId);
+    return this.httpClient.get('sahaay-api/webapi/myresource/getVolunteer/' + volunteerId);
   }
 
   updateVolunteer(volunteer: any) {
-    return this.httpClient.put('Sahaay/webapi/myresource/updateVolunteer', volunteer);
+    return this.httpClient.put('sahaay-api/webapi/myresource/updateVolunteer', volunteer);
   }
   
 }

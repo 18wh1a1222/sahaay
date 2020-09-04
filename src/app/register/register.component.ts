@@ -8,7 +8,7 @@ import { RouteReuseStrategy, Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  confirmPassword: string;
+  confirmPassword: any;
 
   constructor(private service: SahaayService, private router: Router) { }
 
@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(['login']);
     }
     else {
-      alert("Password not Same");
+      alert(this.confirmPassword);
       this.router.navigate(['register']);
     }
   }
